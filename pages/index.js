@@ -1,9 +1,9 @@
 import {
+    useColorModeValue,
     Box,
     Text,
     Heading,
     VStack,
-    Flex,
     Center,
     Avatar,
 } from "@chakra-ui/react";
@@ -20,14 +20,25 @@ const technologies = [
         label: "PHP",
         color: "purple",
     },
-
     {
         label: "React",
         color: "cyan",
     },
     {
+        label: "NextJS",
+        color: "cyan",
+    },
+    {
+        label: "VueJS",
+        color: "green",
+    },
+    {
         label: "Wordpress",
         color: "blue",
+    },
+    {
+        label: "HTML5",
+        color: "red",
     },
     {
         label: "CSS",
@@ -52,6 +63,8 @@ const technologies = [
 ];
 
 export default function Index() {
+    const textColor = useColorModeValue("grey.200", "white");
+
     return (
         <Center flex="1" my={8} textAlign="center">
             <VStack spacing={8}>
@@ -81,7 +94,7 @@ export default function Index() {
                             </Text>
                         </Heading>
 
-                        <Text color="grey">Full Stack Web Developer</Text>
+                        <Text color={textColor}>Full Stack Web Developer</Text>
 
                         <Badges items={technologies} />
                     </VStack>

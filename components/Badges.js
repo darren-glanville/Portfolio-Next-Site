@@ -3,7 +3,7 @@ import { Badge, Wrap } from "@chakra-ui/react";
 
 const Badges = (props) => {
     return (
-        <Wrap justify="center" width="60%">
+        <Wrap justify="center" width={props?.width}>
             {props.items.map((item, index) => {
                 return (
                     <Badge key={index} colorScheme={item.color}>

@@ -14,11 +14,11 @@ export default function Header() {
             link: "https://github.com/darren-glanville",
             label: "See my GitHub account",
         },
-        {
+        /*{
             icon: <FaLinkedin />,
             link: "https://www.linkedin.com/in/darrenglanville",
             label: "See my LinkedIn account",
-        },
+        },*/
     ];
 
     const MenuLinks = (props) => {

@@ -21,6 +21,10 @@ const technologies = [
         color: "purple",
     },
     {
+        label: "Webpack",
+        color: "blue",
+    },
+    {
         label: "React",
         color: "cyan",
     },
@@ -94,7 +98,7 @@ export default function Index() {
                             </Text>
                         </Heading>
 
-                        <Text color={textColor}>Full Stack Web Developer</Text>
+                        <Text color={textColor}>Front End Web Developer</Text>
 
                         <Badges items={technologies} />
                     </VStack>

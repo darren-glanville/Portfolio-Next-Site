@@ -1,54 +1,112 @@
+import { useRef } from "react";
+
 import { ColorModeSwitcher } from "../ColorModeSwitcher";
-import { Flex, Spacer, Link, Button, Tooltip } from "@chakra-ui/react";
-import { FaEnvelopeOpenText, FaGithub, FaLinkedin } from "react-icons/fa";
+import {
+    Box,
+    Flex,
+    Spacer,
+    useDisclosure,
+    VStack,
+    Drawer,
+    CloseButton,
+    IconButton,
+    Button,
+    useColorModeValue,
+    DrawerOverlay,
+    DrawerContent,
+    DrawerFooter,
+    Center,
+} from "@chakra-ui/react";
+import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+
+import Logo from "./Logo";
+import MenuLink from "./MenuLink";
+import { useRouter } from "next/router";
 
 export default function Header() {
-    const links = [
-        {
-            icon: <FaEnvelopeOpenText />,
-            link: "mailto:hithere@darren-glanville.dev",
-            label: "E-mail me",
-        },
-        {
-            icon: <FaGithub />,
-            link: "https://github.com/darren-glanville",
-            label: "See my GitHub account",
-        },
-        {
-            icon: <FaLinkedin />,
-            link: "https://www.linkedin.com/in/darrenglanville",
-            label: "See my LinkedIn account",
-        },
-    ];
+    const router = useRouter();
+    const showLogo = router.asPath === "/" ? false : true;
+    const { isOpen, onOpen, onClose } = useDisclosure();
+    const btnRef = useRef();
 
-    const MenuLinks = (props) => {
+    // Menu
+    function Menu() {
         return (
-            <Flex>
-                {links.map((link, index) => {
-                    return (
-                        <Tooltip key={index} hasArrow label={link.label}>
-                            <Link
-                                href={link.link}
-                                colorScheme="purple"
-                                variant="ghost"
-                                isExternal
-                            >
-                                <Button colorScheme="purple" variant="ghost">
-                                    {link.icon}
-                                </Button>
-                            </Link>
-                        </Tooltip>
-                    );
-                })}
+            <Flex align="center">
+                {showLogo ? <Logo menu /> : null}
+
+                <Box display={{ base: "none", md: "inline-flex" }}>
+                    <Flex>
+                        <MenuLink text="Welcome" link="/" />
+                        <MenuLink text="About" link="/about" />
+                    </Flex>
+                </Box>
             </Flex>
         );
-    };
+    }
+
+    const MobileButton = (
+        <IconButton
+            ref={btnRef}
+            display={{ base: "flex", md: "none" }}
+            me="4"
+            aria-label="Open menu"
+            fontSize="20px"
+            colorScheme="purple"
+            variant="outline"
+            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+            onClick={onOpen}
+        />
+    );
+
+    const MobileNavContent = (
+        <Drawer isOpen={isOpen} finalFocusRef={btnRef} onClose={onClose}>
+            <DrawerOverlay />
+            <DrawerContent>
+                <Box h="100%">
+                    <Flex
+                        bg={useColorModeValue("purple.200", "purple.700")}
+                        display={isOpen ? "flex" : "none"}
+                        flexDirection="column"
+                        p={8}
+                        spacing={4}
+                        align="center"
+                        justify="center"
+                        h="100%"
+                    >
+                        <Center>
+                            <VStack spacing={4}>
+                                <MenuLink text="Welcome" link="/" />
+                                <MenuLink text="About" link="/about" />
+                            </VStack>
+                        </Center>
+                    </Flex>
+                </Box>
+
+                <DrawerFooter>
+                    <Button
+                        colorScheme="purple"
+                        variant="outline"
+                        onClick={onClose}
+                        leftIcon={<CloseIcon />}
+                        w="100%"
+                    >
+                        Close
+                    </Button>
+                </DrawerFooter>
+            </DrawerContent>
+        </Drawer>
+    );
 
     return (
-        <Flex>
-            <MenuLinks />
+        <Flex mb="4" align="center">
+            {MobileButton}
+
+            <Menu />
             <Spacer />
             <ColorModeSwitcher />
+
+            {MobileNavContent}
         </Flex>
     );
 }

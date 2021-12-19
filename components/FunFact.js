@@ -26,7 +26,6 @@ export default function FunFact() {
 
         API.get("activity")
             .then((data) => {
-                console.log(data);
                 setFact(data?.activity);
             })
             .catch((error) => {

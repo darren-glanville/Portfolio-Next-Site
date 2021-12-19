@@ -10,61 +10,9 @@ import {
 
 import Badges from "../components/Badges";
 import FunFact from "../components/FunFact";
+import Logo from "../components/layouts/Logo";
 
-const technologies = [
-    {
-        label: "Laravel",
-        color: "red",
-    },
-    {
-        label: "PHP",
-        color: "purple",
-    },
-    {
-        label: "Webpack",
-        color: "blue",
-    },
-    {
-        label: "React",
-        color: "cyan",
-    },
-    {
-        label: "NextJS",
-        color: "cyan",
-    },
-    {
-        label: "VueJS",
-        color: "green",
-    },
-    {
-        label: "Wordpress",
-        color: "blue",
-    },
-    {
-        label: "HTML5",
-        color: "red",
-    },
-    {
-        label: "CSS",
-        color: "orange",
-    },
-    {
-        label: "SCSS",
-        color: "orange",
-    },
-    {
-        label: "Javascript",
-        color: "yellow",
-    },
-    {
-        label: "JQuery",
-        color: "yellow",
-    },
-    {
-        label: "JSX",
-        color: "yellow",
-    },
-];
+import { technologies } from "../data";
 
 export default function Index() {
     const textColor = useColorModeValue("grey.200", "white");
@@ -79,7 +27,9 @@ export default function Index() {
                             name="Darren Glanville"
                             src="/darren.jpeg"
                         />
-                        <Heading
+
+                        <Text
+                            as={"div"}
                             fontSize={{
                                 base: "3xl",
                                 sm: "4xl",
@@ -89,14 +39,9 @@ export default function Index() {
                             fontWeight={920}
                         >
                             Hi there, I'm{" "}
-                            <Text
-                                as={"div"}
-                                bgGradient="linear(to-r, purple.700, pink.400)"
-                                bgClip="text"
-                            >
-                                Darren Glanville
-                            </Text>
-                        </Heading>
+                        </Text>
+
+                        <Logo />
 
                         <Text color={textColor}>Front End Web Developer</Text>
 

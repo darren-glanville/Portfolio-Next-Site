@@ -27,16 +27,18 @@ export const ColorModeSwitcher = (props) => {
     );
 
     return (
-        <Flex alignItems="center" p={3}>
+        <Flex align="center">
             <FormLabel htmlFor="change-theme" mb="0">
                 <CustomToolTip />
             </FormLabel>
-            <Switch
-                id="change-theme"
-                colorScheme="purple"
-                onChange={toggleColorMode}
-                isChecked={colorMode === "dark" ? true : false}
-            />
+            <Box>
+                <Switch
+                    id="change-theme"
+                    colorScheme="purple"
+                    onChange={toggleColorMode}
+                    isChecked={colorMode === "dark" ? true : false}
+                />
+            </Box>
         </Flex>
     );
 };

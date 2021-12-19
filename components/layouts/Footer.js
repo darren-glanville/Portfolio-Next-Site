@@ -27,7 +27,7 @@ export default function Header() {
     };
 
     return (
-        <Flex justify="center" p="5" mt="auto">
+        <Flex justify="center" p="4" mt="auto">
             <MenuLinks />
         </Flex>
     );

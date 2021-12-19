@@ -46,8 +46,18 @@ export default function FunFact() {
         return (
             <Box>
                 <Tooltip hasArrow label="Randomly generated from an API">
-                    <Flex align="center" color={textColor}>
-                        <Icon as={FaLightbulb} w={4} h={4} pe={1} />
+                    <Flex
+                        align="center"
+                        color={textColor}
+                        direction={{ base: "column", md: "row" }}
+                    >
+                        <Icon
+                            as={FaLightbulb}
+                            w={4}
+                            h={4}
+                            pe={1}
+                            m={{ base: "2", md: "0" }}
+                        />
                         <Text fontSize="xs">
                             <strong>Why Not?</strong> - {fact}
                         </Text>

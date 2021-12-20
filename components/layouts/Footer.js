@@ -2,7 +2,7 @@ import { Flex, Link, Button, Tooltip } from "@chakra-ui/react";
 
 import { footerLinks } from "../../data";
 
-export default function Header() {
+const Footer = (props) => {
     const MenuLinks = (props) => {
         return (
             <Flex>
@@ -31,4 +31,6 @@ export default function Header() {
             <MenuLinks />
         </Flex>
     );
-}
+};
+
+export default Footer;

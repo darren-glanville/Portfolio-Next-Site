@@ -69,7 +69,7 @@ export const footerLinks = [
     },
     {
         icon: <FaLinkedin />,
-        link: "https://www.linkedin.com/in/darrenglanville",
+        link: "https://www.linkedin.com/in/darren-glanville",
         label: "See my LinkedIn account",
     },
 ];

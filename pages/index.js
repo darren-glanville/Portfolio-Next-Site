@@ -23,9 +23,9 @@ export default function Index() {
                 <Box maxW="xl" borderWidth="1px" borderRadius="lg" padding={10}>
                     <VStack spacing={4}>
                         <Avatar
-                            size="lg"
+                            size="2xl"
                             name="Darren Glanville"
-                            src="/darren.jpeg"
+                            src="/darren-cartoon.jpg"
                         />
 
                         <Text

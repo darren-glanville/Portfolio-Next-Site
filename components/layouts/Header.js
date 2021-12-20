@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { useRouter } from "next/router";
 
 import { ColorModeSwitcher } from "../ColorModeSwitcher";
 import {
@@ -21,7 +22,7 @@ import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
 import Logo from "./Logo";
 import MenuLink from "./MenuLink";
-import { useRouter } from "next/router";
+import Social from "./Social";
 
 export default function Header() {
     const router = useRouter();
@@ -78,6 +79,7 @@ export default function Header() {
                             <VStack spacing={4}>
                                 <MenuLink text="Welcome" link="/" />
                                 <MenuLink text="About" link="/about" />
+                                <Social />
                             </VStack>
                         </Center>
                     </Flex>
@@ -104,6 +106,9 @@ export default function Header() {
 
             <Menu />
             <Spacer />
+            <Box me="8" display={{ base: "none", md: "flex" }}>
+                <Social />
+            </Box>
             <ColorModeSwitcher />
 
             {MobileNavContent}

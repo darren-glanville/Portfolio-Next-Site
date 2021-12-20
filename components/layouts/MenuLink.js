@@ -6,13 +6,13 @@ export default function MenuLink(props) {
     const thisPage = router.asPath === props.link ? true : false;
 
     return (
-        <Link href={props.link} style={{ textDecoration: "none" }} p="1">
-            <Button
-                colorScheme="purple"
-                variant="ghost"
-                _focus={{ boxShadow: "none" }}
-                isActive={thisPage}
-            >
+        <Link
+            href={props.link}
+            style={{ textDecoration: "none" }}
+            p="1"
+            _focus={{ shadow: "none" }}
+        >
+            <Button colorScheme="purple" variant="ghost" isActive={thisPage}>
                 {props?.text ?? "Link"}
             </Button>
         </Link>

@@ -56,7 +56,7 @@ export const technologies = [
 
 // Footer Links
 import { FaEnvelopeOpenText, FaGithub, FaLinkedin } from "react-icons/fa";
-export const footerLinks = [
+export const socialLinks = [
     {
         icon: <FaEnvelopeOpenText />,
         link: "mailto:hithere@darren-glanville.dev",

@@ -11,6 +11,7 @@ import {
 import Badges from "../components/Badges";
 import FunFact from "../components/FunFact";
 import Logo from "../components/layouts/Logo";
+import SubHeader from "../components/SubHeader";
 
 import { technologies } from "../data";
 
@@ -28,18 +29,7 @@ export default function Index() {
                             src="/darren-cartoon.jpg"
                         />
 
-                        <Text
-                            as={"div"}
-                            fontSize={{
-                                base: "3xl",
-                                sm: "4xl",
-                                md: "6xl",
-                            }}
-                            lineHeight={"110%"}
-                            fontWeight={920}
-                        >
-                            Hi there, I'm{" "}
-                        </Text>
+                        <SubHeader>Hi there, I'm </SubHeader>
 
                         <Logo />
 

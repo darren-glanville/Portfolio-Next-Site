@@ -2,7 +2,6 @@ import {
     useColorModeValue,
     Box,
     Text,
-    Heading,
     VStack,
     Center,
     Avatar,
@@ -14,26 +13,29 @@ import Logo from "../components/layouts/Logo";
 import SubHeader from "../components/SubHeader";
 
 import { technologies } from "../data";
+import { greyTextColor } from "../variables";
 
 export default function Index() {
-    const textColor = useColorModeValue("grey.200", "white");
-
     return (
         <Center flex="1" my={8} textAlign="center">
             <VStack spacing={8}>
                 <Box maxW="xl" borderWidth="1px" borderRadius="lg" padding={10}>
-                    <VStack spacing={4}>
+                    <VStack spacing={8}>
                         <Avatar
                             size="2xl"
                             name="Darren Glanville"
                             src="/darren-cartoon.jpg"
                         />
 
-                        <SubHeader>Hi there, I'm </SubHeader>
+                        <Box>
+                            <SubHeader>Hi there, I'm </SubHeader>
 
-                        <Logo />
+                            <Logo />
 
-                        <Text color={textColor}>Front End Web Developer</Text>
+                            <Text color={greyTextColor}>
+                                Front End Web Developer
+                            </Text>
+                        </Box>
 
                         <Badges items={technologies} />
                     </VStack>

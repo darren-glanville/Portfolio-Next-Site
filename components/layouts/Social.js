@@ -14,7 +14,11 @@ const Social = (props) => {
                             variant="ghost"
                             isExternal
                         >
-                            <Button colorScheme="purple" variant="ghost">
+                            <Button
+                                colorScheme="purple"
+                                variant="ghost"
+                                p={2.5}
+                            >
                                 {link.icon}
                             </Button>
                         </Link>

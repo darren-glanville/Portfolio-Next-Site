@@ -1,4 +1,4 @@
-import { Heading, Text } from "@chakra-ui/react";
+import { Heading } from "@chakra-ui/react";
 
 const SubHeader = ({ props, children }) => {
     return (

@@ -76,10 +76,12 @@ export default function Header() {
                         h="100%"
                     >
                         <Center>
-                            <VStack spacing={4}>
+                            <VStack spacing={8}>
                                 <MenuLink text="Welcome" link="/" />
                                 <MenuLink text="About" link="/about" />
-                                <Social />
+                                <Box pt={4}>
+                                    <Social />
+                                </Box>
                             </VStack>
                         </Center>
                     </Flex>
@@ -101,7 +103,7 @@ export default function Header() {
     );
 
     return (
-        <Flex mb="4" align="center">
+        <Flex mb={12} align="center">
             {MobileButton}
 
             <Menu />

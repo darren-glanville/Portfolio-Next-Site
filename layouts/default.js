@@ -5,8 +5,8 @@ import Footer from "../components/layouts/Footer";
 
 export default function Layout({ children }) {
     return (
-        <Box height="100vh" textAlign="center" fontSize="xl">
-            <Flex minH="100%" p={8} flexDirection="column">
+        <Box height="100vh" textAlign="center">
+            <Flex minH="100%" p={12} flexDirection="column">
                 <Header />
                 {children}
                 <Footer />

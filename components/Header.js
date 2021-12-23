@@ -4,8 +4,8 @@ const Header = ({ props, children }) => {
     return (
         <Heading
             fontSize={{
-                base: "3xl",
-                sm: "4xl",
+                base: "4xl",
+                sm: "5xl",
                 md: "6xl",
             }}
             lineHeight={"110%"}

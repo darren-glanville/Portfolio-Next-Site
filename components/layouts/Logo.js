@@ -2,8 +2,8 @@ import { Heading, Link, Text } from "@chakra-ui/react";
 
 export default function Logo(props) {
     const fontSize = {
-        base: props?.menu ? "xl" : "3xl",
-        sm: props?.menu ? "1xl" : "4xl",
+        base: props?.menu ? "xl" : "5xl",
+        sm: props?.menu ? "1xl" : "5xl",
         md: props?.menu ? "2xl" : "6xl",
     };
 

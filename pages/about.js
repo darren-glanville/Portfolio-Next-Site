@@ -7,6 +7,7 @@ import {
     Link,
     Image,
     Flex,
+    Stack,
 } from "@chakra-ui/react";
 
 import SubHeader from "../components/SubHeader";
@@ -36,7 +37,12 @@ export default function About() {
             </Box>
 
             <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
-                <Box borderWidth="1px" borderRadius="lg" padding={10}>
+                <Box
+                    key="tech"
+                    borderWidth="1px"
+                    borderRadius="lg"
+                    padding={10}
+                >
                     <Flex grow="1" height="100%" direction="column">
                         <Box>
                             <SubHeader>This is what I work with</SubHeader>
@@ -51,7 +57,12 @@ export default function About() {
                     </Flex>
                 </Box>
 
-                <Box borderWidth="1px" borderRadius="lg" padding={10}>
+                <Box
+                    key="contact"
+                    borderWidth="1px"
+                    borderRadius="lg"
+                    padding={10}
+                >
                     <VStack gap={8}>
                         <Box>
                             <SubHeader>Let's chat and network</SubHeader>
@@ -60,7 +71,10 @@ export default function About() {
                             </Text>
                         </Box>
 
-                        <SimpleGrid columns={{ base: 2, md: 3 }} spacing={8}>
+                        <Stack
+                            direction={{ base: "column", sm: "row" }}
+                            spacing={4}
+                        >
                             {socialLinks.map((link, index) => {
                                 return (
                                     <Link
@@ -68,6 +82,14 @@ export default function About() {
                                         colorScheme="purple"
                                         variant="ghost"
                                         isExternal
+                                        padding={4}
+                                        borderRadius={6}
+                                        width={{
+                                            base: "100%",
+                                            sm: "50%",
+                                            md: "33.33%",
+                                        }}
+                                        key={index}
                                     >
                                         <Flex align="center" direction="column">
                                             <Box
@@ -82,7 +104,7 @@ export default function About() {
                                     </Link>
                                 );
                             })}
-                        </SimpleGrid>
+                        </Stack>
                     </VStack>
                 </Box>
             </SimpleGrid>

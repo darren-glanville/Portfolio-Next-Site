@@ -4,8 +4,8 @@ const SubHeader = ({ props, children }) => {
     return (
         <Heading
             fontSize={{
-                base: "1xl",
-                sm: "2xl",
+                base: "2xl",
+                sm: "3xl",
                 md: "4xl",
             }}
             lineHeight={"110%"}

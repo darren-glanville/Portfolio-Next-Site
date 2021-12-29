@@ -1,11 +1,12 @@
 import Head from "next/head";
-import { ChakraProvider } from "@chakra-ui/react";
-import theme from "../layouts/theme";
+//import { ChakraProvider } from "@chakra-ui/react";
+//import theme from "../layouts/theme";
 import Layout from "../layouts/default";
+import { Chakra } from "../layouts/Chakra";
 
-function App({ Component, pageProps }) {
+export default function App({ Component, pageProps }) {
     return (
-        <ChakraProvider theme={theme}>
+        <Chakra cookies={pageProps.cookies}>
             <Head>
                 <title>Darren Glanville</title>
                 <link
@@ -36,7 +37,8 @@ function App({ Component, pageProps }) {
             <Layout>
                 <Component {...pageProps} />
             </Layout>
-        </ChakraProvider>
+        </Chakra>
     );
 }
-export default App;
+
+export { getServerSideProps } from "../layouts/Chakra";

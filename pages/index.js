@@ -1,11 +1,4 @@
-import {
-    useColorModeValue,
-    Box,
-    Text,
-    VStack,
-    Center,
-    Avatar,
-} from "@chakra-ui/react";
+import { Box, Text, VStack, Center, Avatar } from "@chakra-ui/react";
 
 import Badges from "../components/Badges";
 import FunFact from "../components/FunFact";

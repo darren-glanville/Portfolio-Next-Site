@@ -1,7 +1,8 @@
-import FetchWrapper from "../functions/fetch-wrapper";
+import FetchWrapper from "../lib/fetch-wrapper";
 const API = new FetchWrapper("https://www.boredapi.com/api/");
 
 import React, { useState, useEffect } from "react";
+
 import {
     useColorModeValue,
     Box,
@@ -26,7 +27,11 @@ export default function FunFact() {
 
         API.get("activity")
             .then((data) => {
-                setFact(data?.activity);
+                if (data) {
+                    setFact(data?.activity);
+                } else {
+                    setIsLoading(true);
+                }
             })
             .catch((error) => {
                 console.log(error);

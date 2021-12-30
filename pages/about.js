@@ -14,11 +14,12 @@ import SubHeader from "../components/SubHeader";
 import Badges from "../components/Badges";
 import PageTitle from "../components/PageTitle";
 
-import { technologies } from "../data";
+import { getTechnologies } from "../lib/api";
+
 import { greyTextColor } from "../variables";
 import { socialLinks } from "../data";
 
-export default function About() {
+export default function About({ allTechnologies, preview }) {
     return (
         <Container maxW="container.xl">
             <PageTitle>About me</PageTitle>
@@ -52,7 +53,7 @@ export default function About() {
                         </Box>
 
                         <Box my="auto" py={4}>
-                            <Badges items={technologies} />
+                            <Badges items={allTechnologies} />
                         </Box>
                     </Flex>
                 </Box>
@@ -93,7 +94,7 @@ export default function About() {
                                     >
                                         <Flex align="center" direction="column">
                                             <Box
-                                                width="3rem"
+                                                width="2rem"
                                                 mb={5}
                                                 color={greyTextColor}
                                             >
@@ -110,4 +111,11 @@ export default function About() {
             </SimpleGrid>
         </Container>
     );
+}
+
+export async function getStaticProps({ preview = null }) {
+    const allTechnologies = (await getTechnologies(preview)) || [];
+    return {
+        props: { allTechnologies, preview },
+    };
 }

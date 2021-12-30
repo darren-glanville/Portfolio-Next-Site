@@ -44,5 +44,6 @@ export async function getStaticProps({ preview = null }) {
     const allTechnologies = (await getTechnologies(preview)) || [];
     return {
         props: { allTechnologies, preview },
+        revalidate: 60,
     };
 }

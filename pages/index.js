@@ -5,8 +5,8 @@ import FunFact from "../components/FunFact";
 import Logo from "../components/layouts/Logo";
 import SubHeader from "../components/SubHeader";
 
-import { getTechnologies } from "../lib/api";
 import { greyTextColor } from "../variables";
+import { technologies } from "../data";
 
 export default function Index({ allTechnologies, preview }) {
     return (
@@ -30,7 +30,7 @@ export default function Index({ allTechnologies, preview }) {
                             </Text>
                         </Box>
 
-                        <Badges items={allTechnologies} />
+                        <Badges items={technologies} />
                     </VStack>
                 </Box>
 
@@ -38,12 +38,4 @@ export default function Index({ allTechnologies, preview }) {
             </VStack>
         </Center>
     );
-}
-
-export async function getStaticProps({ preview = null }) {
-    const allTechnologies = (await getTechnologies(preview)) || [];
-    return {
-        props: { allTechnologies, preview },
-        revalidate: 60,
-    };
 }

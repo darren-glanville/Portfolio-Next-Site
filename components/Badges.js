@@ -6,14 +6,10 @@ const Badges = (props) => {
 
     return (
         <Wrap justify="center" width={props?.width}>
-            {items?.data?.map((item, index) => {
+            {items.map((item, index) => {
                 return (
-                    <Badge
-                        key={index}
-                        colorScheme={item.attributes.Colour.toLowerCase()}
-                        {...badgeProps}
-                    >
-                        {item.attributes.name}
+                    <Badge key={index} colorScheme={item.color} {...badgeProps}>
+                        {item.label}
                     </Badge>
                 );
             })}

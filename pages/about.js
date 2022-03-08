@@ -14,7 +14,7 @@ import SubHeader from "../components/SubHeader";
 import Badges from "../components/Badges";
 import PageTitle from "../components/PageTitle";
 
-import { getTechnologies } from "../lib/api";
+import { technologies } from "../data";
 
 import { greyTextColor } from "../variables";
 import { socialLinks } from "../data";
@@ -53,7 +53,7 @@ export default function About({ allTechnologies, preview }) {
                         </Box>
 
                         <Box my="auto" py={4}>
-                            <Badges items={allTechnologies} />
+                            <Badges items={technologies} />
                         </Box>
                     </Flex>
                 </Box>
@@ -111,12 +111,4 @@ export default function About({ allTechnologies, preview }) {
             </SimpleGrid>
         </Container>
     );
-}
-
-export async function getStaticProps({ preview = null }) {
-    const allTechnologies = (await getTechnologies(preview)) || [];
-    return {
-        props: { allTechnologies, preview },
-        revalidate: 60,
-    };
 }

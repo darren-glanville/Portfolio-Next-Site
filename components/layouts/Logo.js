@@ -1,4 +1,5 @@
 import { Heading, Link, Text } from "@chakra-ui/react";
+import Router from "next/router";
 
 export default function Logo(props) {
     const fontSize = {
@@ -8,7 +9,10 @@ export default function Logo(props) {
     };
 
     return (
-        <Link href="/" style={{ textDecoration: "none" }}>
+        <Link //href="/"
+            onClick={() => Router.push("/")}
+            style={{ textDecoration: "none" }}
+        >
             <Heading
                 fontSize={fontSize}
                 lineHeight={"110%"}

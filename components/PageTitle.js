@@ -3,7 +3,7 @@ import Header from "./Header";
 
 const PageTitle = ({ props, children }) => {
     return (
-        <Box p={12} mb={12}>
+        <Box p={{ base: 0, md: 12 }} mb={12}>
             <Center>
                 <Header>{children}</Header>
             </Center>

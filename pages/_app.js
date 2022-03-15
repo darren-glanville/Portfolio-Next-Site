@@ -2,8 +2,9 @@ import Head from "next/head";
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from "../layouts/theme";
 import Layout from "../layouts/default";
+import { AnimatePresence } from "framer-motion";
 
-function App({ Component, pageProps }) {
+function App({ Component, pageProps, router }) {
     return (
         <ChakraProvider theme={theme}>
             <Head>
@@ -33,9 +34,11 @@ function App({ Component, pageProps }) {
                 />
                 <meta name="theme-color" content="#ffffff" />
             </Head>
-            <Layout>
-                <Component {...pageProps} />
-            </Layout>
+            <AnimatePresence exitBeforeEnter>
+                <Layout>
+                    <Component {...pageProps} />
+                </Layout>
+            </AnimatePresence>
         </ChakraProvider>
     );
 }

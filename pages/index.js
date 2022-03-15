@@ -5,35 +5,44 @@ import FunFact from "../components/FunFact";
 import Logo from "../components/layouts/Logo";
 import SubHeader from "../components/SubHeader";
 
-import { greyTextColor } from "../variables";
+import { greyTextColor, fadeInUp, stagger } from "../variables";
 import { technologies } from "../data";
 
-export default function Index({ allTechnologies, preview }) {
+import { motion } from "framer-motion";
+
+export default function Index(props) {
     return (
         <Center flex="1" my={8} textAlign="center">
             <VStack spacing={8}>
                 <Box maxW="xl" borderWidth="1px" borderRadius="lg" padding={10}>
-                    <VStack spacing={8}>
-                        <Avatar
-                            size="2xl"
-                            name="Darren Glanville"
-                            src="/darren-cartoon.jpg"
-                        />
+                    <motion.div variants={stagger}>
+                        <VStack spacing={8}>
+                            <motion.div variants={fadeInUp}>
+                                <Avatar
+                                    size="2xl"
+                                    name="Darren Glanville"
+                                    src="/darren-cartoon.jpg"
+                                />
+                            </motion.div>
 
-                        <Box>
-                            <SubHeader>Hi there, I'm </SubHeader>
+                            <motion.div variants={fadeInUp}>
+                                <Box>
+                                    <SubHeader>Hi there, I'm </SubHeader>
 
-                            <Logo />
+                                    <Logo />
 
-                            <Text color={greyTextColor}>
-                                Front End Web Developer
-                            </Text>
-                        </Box>
+                                    <Text color={greyTextColor}>
+                                        Web Developer based in County Durham, UK
+                                    </Text>
+                                </Box>
+                            </motion.div>
 
-                        <Badges items={technologies} />
-                    </VStack>
+                            <motion.div variants={fadeInUp}>
+                                <Badges items={technologies} />
+                            </motion.div>
+                        </VStack>
+                    </motion.div>
                 </Box>
-
                 <FunFact />
             </VStack>
         </Center>

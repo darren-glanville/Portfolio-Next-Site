@@ -39,7 +39,7 @@ export default function Header() {
                 <Box display={{ base: "none", md: "inline-flex" }}>
                     <Flex>
                         <MenuLink text="Welcome" link="/" />
-                        <MenuLink text="About" link="/about" />
+                        <MenuLink text="About / Contact" link="/about" />
                     </Flex>
                 </Box>
             </Flex>
@@ -76,7 +76,7 @@ export default function Header() {
                         h="100%"
                     >
                         <Center>
-                            <VStack spacing={8}>
+                            <VStack spacing={8} onClick={onClose}>
                                 <MenuLink text="Welcome" link="/" />
                                 <MenuLink text="About" link="/about" />
                                 <Box pt={4}>

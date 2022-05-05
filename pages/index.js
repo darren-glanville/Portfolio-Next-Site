@@ -32,7 +32,7 @@ export default function Index(props) {
                                     <Logo />
 
                                     <Text color={greyTextColor}>
-                                        Web Developer based in County Durham, UK
+                                        Senior Web Developer based in the UK
                                     </Text>
                                 </Box>
                             </motion.div>
